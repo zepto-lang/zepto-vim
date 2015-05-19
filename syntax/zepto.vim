@@ -1,6 +1,6 @@
 " Vim syntax file
 " Language:     Zepto
-" Maintainer:   Veit Heller
+" Maintainer:   Veit Heller <veit@veitheller.de>
 " URL:          http://github.com/zepto-lang/vim-zepto.git
 " Description:  Contains all of the keywords in #lang zepto
 
