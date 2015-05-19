@@ -30,11 +30,13 @@ syn keyword zeptoSyntax quasiquote unquote unquote-splicing
 
 syn keyword zeptoSyntax delay force
 
-syn keyword zeptoSyntax write display error write?
-
 syn match zeptoSyntax /\<[\u03bb]\>/
+syn match zeptoSyntax /\<[\u0192]\>/
 
-syn keyword zeptoFunc boolean? not equal? eqv? eq?
+syn keyword zeptoFunc write display error write?
+syn keyword zeptoFunc read read-all read-contents read?
+
+syn keyword zeptoFunc boolean? not equal? eqv? eq? nil
 syn keyword zeptoFunc #t #f symbol? boolean?
 syn keyword zeptoFunc number? complex? real? rational? integer?
 syn keyword zeptoFunc zero? positive? negative?
@@ -67,7 +69,7 @@ syn keyword zeptoFunc string-ref string-set! substring string-copy string-copy!
 syn keyword zeptoFunc string-fill! string-append string->list list->string
 syn keyword zeptoFunc build-string string=? string<? string<=? string>? string>=?
 syn keyword zeptoFunc string-ci=? string-ci<? string-ci<=? string-ci>? string-ci>=?
-syn keyword zeptoFunc string-extend ++ +=
+syn keyword zeptoFunc string-extend ++ += string-lower-case string-upper-case
 
 syn keyword zeptoFunc char? char->integer integer->char
 syn keyword zeptoFunc char=? char<? char<=? char>? char>=?
