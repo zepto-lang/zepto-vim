@@ -70,6 +70,7 @@ syn keyword zeptoFunc string-fill! string-append string->list list->string
 syn keyword zeptoFunc build-string string=? string<? string<=? string>? string>=?
 syn keyword zeptoFunc string-ci=? string-ci<? string-ci<=? string-ci>? string-ci>=?
 syn keyword zeptoFunc string-extend ++ += string-lower-case string-upper-case
+syn keyword zeptoFunc string-substitute
 
 syn keyword zeptoFunc char? char->integer integer->char
 syn keyword zeptoFunc char=? char<? char<=? char>? char>=?
