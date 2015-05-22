@@ -19,7 +19,7 @@ else
 endif
 
 
-syn keyword zeptoSyntax quote \| <- ,
+syn keyword zeptoSyntax quote \| <- , typeof
 syn keyword zeptoSyntax lambda let let* letrec
 syn keyword zeptoSyntax if cond and or case define
 syn keyword zeptoSyntax define-syntax syntax-rules
@@ -83,10 +83,10 @@ syn keyword zeptoFunc symbol->string string->symbol
 syn keyword zeptoFunc pair? null? cons car cdr null
 syn keyword zeptoFunc list? list length
 syn keyword zeptoFunc list-ref list-tail append reverse map
-syn keyword zeptoFunc for-each foldl foldr filter remove
+syn keyword zeptoFunc for-each foldl foldr fold filter remove
 syn keyword zeptoFunc sort member memv memq
 syn keyword zeptoFunc assq assv assoc
-syn keyword zeptoFunc caar cadr cdar cddr caaar caadr cadar caddr cdaar
+syn keyword zeptoFunc caar cadr cdar cddr caaar caadr cadar caddr cdaar cdadr
 syn keyword zeptoFunc cddar cdddr caaaar caaadr caadar caaddr cadadr caddar
 syn keyword zeptoFunc cadddr cdaaar cdaadr cdadar cddaar cdddar cddddr
 
