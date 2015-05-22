@@ -21,7 +21,7 @@ endif
 
 syn keyword zeptoSyntax quote \| <- , typeof
 syn keyword zeptoSyntax lambda let let* letrec
-syn keyword zeptoSyntax if cond and or case define
+syn keyword zeptoSyntax if cond and or case define else
 syn keyword zeptoSyntax define-syntax syntax-rules
 syn keyword zeptoSyntax when unless
 syn keyword zeptoSyntax set! set-car! set-cdr!
@@ -39,12 +39,12 @@ syn keyword zeptoFunc read read-all read-contents read?
 syn keyword zeptoFunc boolean? not equal? eqv? eq? nil
 syn keyword zeptoFunc #t #f symbol? boolean?
 syn keyword zeptoFunc number? complex? real? rational? integer?
-syn keyword zeptoFunc zero? positive? negative?
+syn keyword zeptoFunc zero? positive? negative? float?
 syn keyword zeptoFunc even? odd? exact? inexact?
 syn keyword zeptoFunc exact->inexact
 
 syn keyword zeptoFunc + - * / quotient remainder modulo mod
-syn keyword zeptoFunc abs max min gcd lcm round floor ceiling ceil
+syn keyword zeptoFunc abs max min gcd lcm round floor ceiling ceil real imaginary
 syn keyword zeptoFunc truncate numerator denominator generate sum product
 
 syn keyword zeptoFunc any? all? every? iota
@@ -60,7 +60,8 @@ syn keyword zeptoFunc real-part imag-part
 
 syn keyword zeptoFunc random
 
-syn keyword zeptoFunc number->string string->number
+syn keyword zeptoFunc number->string string->number string->float string->integer
+syn keyword zeptoFunc string->rational string->complex
 
 syn keyword zeptoFunc pi e
 
