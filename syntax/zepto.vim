@@ -101,10 +101,11 @@ syn keyword zeptoFunc procedure? apply compose
 syn keyword zeptoFunc primitive?
 syn keyword zeptoFunc negate curry uncurry
 
+syn match zeptoAtom      ,:\k+,  contained
 syn match zeptoSymbol    ,\k+,  contained
 
 syn cluster zeptoNormal  contains=zeptoSyntax,zeptoFunc,zeptoDelimiter
-syn cluster zeptoQuotedStuff  contains=zeptoSymbol
+syn cluster zeptoQuotedStuff  contains=zeptoSymbol,zeptoAtom
 syn cluster zeptoQuotedOrNormal  contains=zeptoDelimiter
 
 syn region zeptoQuotedStruc start="("rs=s+1 end=")"re=e-1     contains=@zeptoQuotedStuff,@zeptoQuotedOrNormal contained
@@ -211,8 +212,6 @@ syn region zeptoMultilineComment start=/#|/ end=/|#/ contains=zeptoMultilineComm
 syn cluster zeptoNormal  add=zeptoQuoted,zeptoComment,zeptoMultilineComment
 syn cluster zeptoQuotedOrNormal  add=zeptoComment,zeptoMultilineComment
 
-" syn match zeptoListComp "\[.+ \| \w+ <- .+]"
-
 syn sync match matchPlace grouphere NONE "^[^ \t]"
 
 if version >= 508 || !exists("zepto_syntax_init")
@@ -237,7 +236,7 @@ if version >= 508 || !exists("zepto_syntax_init")
   HiLink zeptoQuoted             Structure
   HiLink zeptoQuotedStruc        Structure
   HiLink zeptoSymbol             Structure
-  HiLink zeptoListComp           Structure
+  HiLink zeptoAtom               Structure
 
   HiLink zeptoDelimiter          Delimiter
   HiLink zeptoConstant           Constant
