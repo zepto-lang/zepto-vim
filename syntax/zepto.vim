@@ -61,7 +61,7 @@ syn keyword zeptoFunc real-part imag-part
 syn keyword zeptoFunc random
 
 syn keyword zeptoFunc number->string string->number string->float string->integer
-syn keyword zeptoFunc string->rational string->complex
+syn keyword zeptoFunc string->rational string->complex string->boolean
 
 syn keyword zeptoFunc pi e
 
