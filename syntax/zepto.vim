@@ -82,7 +82,7 @@ syn keyword zeptoFunc symbol?
 syn keyword zeptoFunc symbol->string string->symbol
 
 syn keyword zeptoFunc pair? null? cons car cdr null
-syn keyword zeptoFunc list? list length
+syn keyword zeptoFunc list? list length list-append list-extend
 syn keyword zeptoFunc list-ref list-tail append reverse map
 syn keyword zeptoFunc for-each foldl foldr fold filter remove
 syn keyword zeptoFunc sort member memv memq
@@ -95,7 +95,7 @@ syn keyword zeptoFunc head tail indexed-tail
 
 syn keyword zeptoFunc vector?  make-vector vector vector-length
 syn keyword zeptoFunc vector-ref vector-set!  vector->list list->vector
-syn keyword zeptoFunc vector-fill!
+syn keyword zeptoFunc vector-fill! vector-append vector-extend
 
 syn keyword zeptoFunc procedure? apply compose
 syn keyword zeptoFunc primitive?
