@@ -43,7 +43,7 @@ syn keyword zeptoFunc zero? positive? negative? float?
 syn keyword zeptoFunc even? odd? exact? inexact?
 syn keyword zeptoFunc exact->inexact
 
-syn keyword zeptoFunc + - * / quotient remainder modulo mod
+syn keyword zeptoFunc + - * / /. quotient remainder modulo mod
 syn keyword zeptoFunc abs max min gcd lcm round floor ceiling ceil real imaginary
 syn keyword zeptoFunc truncate numerator denominator generate sum product
 
@@ -83,7 +83,7 @@ syn keyword zeptoFunc symbol->string string->symbol
 
 syn keyword zeptoFunc pair? null? cons car cdr null
 syn keyword zeptoFunc list? list length list-append list-extend
-syn keyword zeptoFunc list-ref list-tail append reverse map
+syn keyword zeptoFunc list-ref list-tail append reverse map reduce
 syn keyword zeptoFunc for-each foldl foldr fold filter remove
 syn keyword zeptoFunc sort member memv memq
 syn keyword zeptoFunc assq assv assoc
