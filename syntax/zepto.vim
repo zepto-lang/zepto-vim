@@ -19,9 +19,9 @@ else
 endif
 
 
-syn keyword zeptoSyntax quote \| <- , typeof
+syn keyword zeptoSyntax quote \| <- , typeof \|\| &&
 syn keyword zeptoSyntax lambda let let* letrec
-syn keyword zeptoSyntax if cond and or case define else
+syn keyword zeptoSyntax if cond and or nor case define else
 syn keyword zeptoSyntax define-syntax syntax-rules
 syn keyword zeptoSyntax when unless
 syn keyword zeptoSyntax set! set-car! set-cdr!
