@@ -19,7 +19,7 @@ else
 endif
 
 
-syn keyword zeptoSyntax quote \| <- , typeof \|\| &&
+syn keyword zeptoSyntax quote \| <- , typeof \|\| && <|
 syn keyword zeptoSyntax lambda let let* letrec
 syn keyword zeptoSyntax if cond and or nor case define else
 syn keyword zeptoSyntax define-syntax syntax-rules
