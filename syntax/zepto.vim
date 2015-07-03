@@ -73,6 +73,8 @@ syn keyword zeptoFunc string-ci=? string-ci<? string-ci<=? string-ci>? string-ci
 syn keyword zeptoFunc string-extend ++ += string-lower-case string-upper-case
 syn keyword zeptoFunc string-substitute
 
+syn keyword zeptoFunc make-hash hash-values hash-keys hash-filter-by-keys
+
 syn keyword zeptoFunc char? char->integer integer->char
 syn keyword zeptoFunc char=? char<? char<=? char>? char>=?
 syn keyword zeptoFunc char-ci=? char-ci<? char-ci<=? char-ci>? char-ci>=?
@@ -118,6 +120,7 @@ syn cluster zeptoQuotedStuff add=zeptoQuotedStruc
 syn region zeptoStruc matchgroup=Delimiter start="("rs=s+1 matchgroup=Delimiter end=")"re=e-1 contains=@zeptoNormal
 syn region zeptoStruc matchgroup=Delimiter start="#("rs=s+2 matchgroup=Delimiter end=")"re=e-1 contains=@zeptoNormal
 syn region zeptoStruc matchgroup=Delimiter start="{"rs=s+1 matchgroup=Delimiter end="}"re=e-1 contains=@zeptoNormal
+syn region zeptoStruc matchgroup=Delimiter start="#{"rs=s+1 matchgroup=Delimiter end="}"re=e-1 contains=@zeptoNormal
 syn region zeptoStruc matchgroup=Delimiter start="\["rs=s+1 matchgroup=Delimiter end="\]"re=e-1 contains=@zeptoNormal
 
 syn region zeptoString start=/\%(\\\)\@<!"/ skip=/\\[\\"]/ end=/"/
