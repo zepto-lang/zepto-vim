@@ -36,7 +36,7 @@ syn match zeptoSyntax /\<[\u0192]\>/
 syn keyword zeptoFunc write display error write?
 syn keyword zeptoFunc read read-all read-contents read?
 
-syn keyword zeptoFunc boolean? not equal? eqv? eq? nil
+syn keyword zeptoFunc boolean? not equal? eqv? eq? nil inf
 syn keyword zeptoFunc #t #f symbol? boolean?
 syn keyword zeptoFunc number? complex? real? rational? integer?
 syn keyword zeptoFunc zero? positive? negative? float?
