@@ -87,8 +87,8 @@ syn keyword zeptoFunc symbol->string string->symbol
 
 syn keyword zeptoFunc pair? null? cons car cdr null
 syn keyword zeptoFunc list? list length list-append list-extend list-index
-syn keyword zeptoFunc list-ref list-tail append reverse map reduce
-syn keyword zeptoFunc for-each foldl foldr fold filter remove in?
+syn keyword zeptoFunc list-ref list-tail append extend reverse map reduce
+syn keyword zeptoFunc for-each foldl foldr fold filter remove in? pop-left pop-right append-left
 syn keyword zeptoFunc sort member memv memq
 syn keyword zeptoFunc assq assv assoc
 syn keyword zeptoFunc caar cadr cdar cddr caaar caadr cadar caddr cdaar cdadr
