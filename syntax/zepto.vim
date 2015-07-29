@@ -73,7 +73,7 @@ syn keyword zeptoFunc string-ci=? string-ci<? string-ci<=? string-ci>? string-ci
 syn keyword zeptoFunc string-extend ++ += string-lower-case string-upper-case
 syn keyword zeptoFunc string-substitute
 
-syn keyword zeptoFunc make-hash hash-values hash-keys hash-filter-by-keys
+syn keyword zeptoFunc make-hash hash-values hash-keys hash-filter-by-keys hash-map?
 syn keyword zeptoFunc hash-contains? hash-values-reduce hash-values-map hash-values-filter
 syn keyword zeptoFunc hash-keys-reduce hash-keys-map hash-keys-filter
 
@@ -86,8 +86,8 @@ syn keyword zeptoFunc symbol?
 syn keyword zeptoFunc symbol->string string->symbol
 
 syn keyword zeptoFunc pair? null? cons car cdr null
-syn keyword zeptoFunc list? list length list-append list-extend list-index
-syn keyword zeptoFunc list-ref list-tail append extend reverse map reduce
+syn keyword zeptoFunc list? list list-length list-append list-extend list-index
+syn keyword zeptoFunc list-ref list-tail append extend reverse map reduce length
 syn keyword zeptoFunc for-each foldl foldr fold filter remove in? pop-left pop-right append-left
 syn keyword zeptoFunc sort member memv memq
 syn keyword zeptoFunc assq assv assoc
