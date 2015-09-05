@@ -101,6 +101,8 @@ syn keyword zeptoFunc vector?  make-vector vector vector-length
 syn keyword zeptoFunc vector-ref vector-set!  vector->list list->vector
 syn keyword zeptoFunc vector-fill! vector-append vector-extend
 
+syn keyword zeptoFunc byte-vector? byte-vector-ref byte-vector-length
+
 syn keyword zeptoFunc procedure? apply compose
 syn keyword zeptoFunc primitive?
 syn keyword zeptoFunc negate curry uncurry
