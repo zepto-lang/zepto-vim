@@ -115,15 +115,19 @@ syn cluster zeptoQuotedStuff  contains=zeptoSymbol,zeptoAtom
 syn cluster zeptoQuotedOrNormal  contains=zeptoDelimiter
 
 syn region zeptoQuotedStruc start="("rs=s+1 end=")"re=e-1     contains=@zeptoQuotedStuff,@zeptoQuotedOrNormal contained
+syn region zeptoQuotedStruc start="b("rs=s+1 end=")"re=e-1     contains=@zeptoQuotedStuff,@zeptoQuotedOrNormal contained
 syn region zeptoQuotedStruc start="#("rs=s+2 end=")"re=e-1    contains=@zeptoQuotedStuff,@zeptoQuotedOrNormal contained
 syn region zeptoQuotedStruc start="{"rs=s+1 end="}"re=e-1   contains=@zeptoQuotedStuff,@zeptoQuotedOrNormal contained
+syn region zeptoQuotedStruc start="b{"rs=s+1 end="}"re=e-1   contains=@zeptoQuotedStuff,@zeptoQuotedOrNormal contained
 syn region zeptoQuotedStruc start="\["rs=s+1 end="\]"re=e-1   contains=@zeptoQuotedStuff,@zeptoQuotedOrNormal contained
 
 syn cluster zeptoQuotedStuff add=zeptoQuotedStruc
 
 syn region zeptoStruc matchgroup=Delimiter start="("rs=s+1 matchgroup=Delimiter end=")"re=e-1 contains=@zeptoNormal
 syn region zeptoStruc matchgroup=Delimiter start="#("rs=s+2 matchgroup=Delimiter end=")"re=e-1 contains=@zeptoNormal
+syn region zeptoStruc matchgroup=Delimiter start="b("rs=s+1 matchgroup=Delimiter end=")"re=e-1 contains=@zeptoNormal
 syn region zeptoStruc matchgroup=Delimiter start="{"rs=s+1 matchgroup=Delimiter end="}"re=e-1 contains=@zeptoNormal
+syn region zeptoStruc matchgroup=Delimiter start="b{"rs=s+1 matchgroup=Delimiter end="}"re=e-1 contains=@zeptoNormal
 syn region zeptoStruc matchgroup=Delimiter start="#{"rs=s+1 matchgroup=Delimiter end="}"re=e-1 contains=@zeptoNormal
 syn region zeptoStruc matchgroup=Delimiter start="\["rs=s+1 matchgroup=Delimiter end="\]"re=e-1 contains=@zeptoNormal
 
