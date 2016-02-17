@@ -33,6 +33,8 @@ syn keyword zeptoSyntax delay force
 syn match zeptoSyntax /\<[\u03bb]\>/
 syn match zeptoSyntax /\<[\u0192]\>/
 
+syn keyword zeptoSyntax module module-extend import import-all export loads
+
 syn keyword zeptoFunc write display error write?
 syn keyword zeptoFunc read read-all read-contents read?
 
@@ -180,7 +182,7 @@ syn match zeptoNumber    "\<\(#[xdobie]\)\{0,2}[-+]\(inf\|nan\)\.[0f]i\?\>" cont
 syn match zeptoNumber    "\<\(#[xdobie]\)\{0,2}[-+]\(inf\|nan\)\.[0f][-+]\(inf\|nan\)\.[0f]i\>" contains=zeptoContainedNumberError
 syn match zeptoNumber    "\<\(#[xdobie]\)\{0,2}[-+]\(inf\|nan\)\.[0f]@[-+]\(inf\|nan\)\.[0f]\>" contains=zeptoContainedNumberError
 
-syn keyword zeptoBoolean  #t #f #true #false #T #F
+syn keyword zeptoBoolean  #t #f
 
 syn match zeptoError   "\<#\\\k*\>"
 
