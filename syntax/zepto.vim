@@ -25,7 +25,7 @@ syn keyword zeptoSyntax if cond and or nor case define else
 syn keyword zeptoSyntax define-syntax syntax-rules
 syn keyword zeptoSyntax when unless
 syn keyword zeptoSyntax set! set-car! set-cdr!
-syn keyword zeptoSyntax for for-each begin
+syn keyword zeptoSyntax for for-each foreach begin
 syn keyword zeptoSyntax quasiquote unquote unquote-splicing
 
 syn keyword zeptoSyntax delay force
@@ -37,7 +37,7 @@ syn keyword zeptoFunc write display error write?
 syn keyword zeptoFunc read read-all read-contents read?
 
 syn keyword zeptoFunc boolean? not equal? eqv? eq? nil inf
-syn keyword zeptoFunc #t #f symbol? boolean?
+syn keyword zeptoFunc symbol? boolean?
 syn keyword zeptoFunc number? complex? real? rational? integer?
 syn keyword zeptoFunc zero? positive? negative? float?
 syn keyword zeptoFunc even? odd? exact? inexact?
@@ -65,30 +65,32 @@ syn keyword zeptoFunc string->rational string->complex string->boolean
 
 syn keyword zeptoFunc pi e
 
-syn keyword zeptoFunc string? make-string string string->immutable-string string-length
-syn keyword zeptoFunc string-ref string-set! substring string-copy string-copy!
-syn keyword zeptoFunc string-fill! string-append string->list list->string
-syn keyword zeptoFunc build-string string=? string<? string<=? string>? string>=?
-syn keyword zeptoFunc string-ci=? string-ci<? string-ci<=? string-ci>? string-ci>=?
-syn keyword zeptoFunc string-extend ++ += string-lower-case string-upper-case
-syn keyword zeptoFunc string-substitute
+syn keyword zeptoFunc string? make-string string string:length
+syn keyword zeptoFunc string:ref string:set! substring string:copy string:copy!
+syn keyword zeptoFunc string:fill! string:append string->list list->string
+syn keyword zeptoFunc string:extend ++ += string:lower-case string:upper-case
+syn keyword zeptoFunc string:substitute
 
-syn keyword zeptoFunc make-hash hash-values hash-keys hash-filter-by-keys hash-map?
-syn keyword zeptoFunc hash-contains? hash-values-reduce hash-values-map hash-values-filter
-syn keyword zeptoFunc hash-keys-reduce hash-keys-map hash-keys-filter
+syn keyword zeptoFunc make-hash hash:values hash:keys hash:filter-by-keys hash-map?
+syn keyword zeptoFunc hash-contains? hash:values-reduce hash:values-map hash:values-filter
+syn keyword zeptoFunc hash:keys-reduce hash:keys-map hash:keys-filter
+syn keyword zeptoFunc hash:kv-reduce hash:kv-map hash:kv-filter
+syn keyword zeptoFunc hash:set hash:set! hash:update hash:update!
+
+syn keyword zeptoFunc char->integer
 
 syn keyword zeptoFunc char? char->integer integer->char
-syn keyword zeptoFunc char=? char<? char<=? char>? char>=?
-syn keyword zeptoFunc char-ci=? char-ci<? char-ci<=? char-ci>? char-ci>=?
-syn keyword zeptoFunc char-upper-case char-lower-case
+syn keyword zeptoFunc char:upper-case char:lower-case
 
 syn keyword zeptoFunc symbol?
 syn keyword zeptoFunc symbol->string string->symbol
 
+syn keyword zeptoFunc list->vector list->string vector->list string->list
+
 syn keyword zeptoFunc pair? null? cons car cdr null
-syn keyword zeptoFunc list? list list-length list-append list-extend list-index
-syn keyword zeptoFunc list-ref list-tail append extend reverse map reduce length
-syn keyword zeptoFunc for-each foldl foldr fold filter remove in? pop-left pop-right append-left
+syn keyword zeptoFunc list? list list:length list:append list:extend list:index
+syn keyword zeptoFunc list:ref list:tail append extend reverse map reduce length
+syn keyword zeptoFunc foldl foldr fold filter remove in? pop-left pop-right append-left
 syn keyword zeptoFunc sort member memv memq
 syn keyword zeptoFunc assq assv assoc
 syn keyword zeptoFunc caar cadr cdar cddr caaar caadr cadar caddr cdaar cdadr
@@ -97,13 +99,17 @@ syn keyword zeptoFunc cadddr cdaaar cdaadr cdadar cddaar cdddar cddddr
 
 syn keyword zeptoFunc head tail indexed-tail
 
-syn keyword zeptoFunc vector?  make-vector vector vector-length
-syn keyword zeptoFunc vector-ref vector-set!  vector->list list->vector
-syn keyword zeptoFunc vector-fill! vector-append vector-extend
+syn keyword zeptoFunc vector->byte-vector byte-vector->vector
 
-syn keyword zeptoFunc byte-vector? byte-vector-ref byte-vector-length
-syn keyword zeptoFunc byte-vector byte-vector-extend byte-vector-append
-syn keyword zeptoFunc make-byte-vector
+syn keyword zeptoFunc vector?  make-vector vector vector:length
+syn keyword zeptoFunc vector:ref vector:set! vector:update vector:update!
+syn keyword zeptoFunc vector:fill! vector:append vector:extend
+
+syn keyword zeptoFunc byte-vector? byte-vector:ref byte-vector:length
+syn keyword zeptoFunc byte-vector byte-vector:extend byte-vector:append
+syn keyword zeptoFunc make-byte-vector byte-vector:head byte-vector:tail
+syn keyword zeptoFunc make-byte-vector byte-vector:update byte-vector:update!
+
 
 syn keyword zeptoFunc procedure? apply compose
 syn keyword zeptoFunc primitive?
@@ -120,17 +126,18 @@ syn region zeptoQuotedStruc start="("rs=s+1 end=")"re=e-1     contains=@zeptoQuo
 syn region zeptoQuotedStruc start="b("rs=s+1 end=")"re=e-1     contains=@zeptoQuotedStuff,@zeptoQuotedOrNormal contained
 syn region zeptoQuotedStruc start="#("rs=s+2 end=")"re=e-1    contains=@zeptoQuotedStuff,@zeptoQuotedOrNormal contained
 syn region zeptoQuotedStruc start="{"rs=s+1 end="}"re=e-1   contains=@zeptoQuotedStuff,@zeptoQuotedOrNormal contained
-syn region zeptoQuotedStruc start="b{"rs=s+1 end="}"re=e-1   contains=@zeptoQuotedStuff,@zeptoQuotedOrNormal contained
+syn region zeptoQuotedStruc start="b{"rs=s+2 end="}"re=e-1   contains=@zeptoQuotedStuff,@zeptoQuotedOrNormal contained
+syn region zeptoQuotedStruc start="#{"rs=s+2 end="}"re=e-1   contains=@zeptoQuotedStuff,@zeptoQuotedOrNormal contained
 syn region zeptoQuotedStruc start="\["rs=s+1 end="\]"re=e-1   contains=@zeptoQuotedStuff,@zeptoQuotedOrNormal contained
 
 syn cluster zeptoQuotedStuff add=zeptoQuotedStruc
 
 syn region zeptoStruc matchgroup=Delimiter start="("rs=s+1 matchgroup=Delimiter end=")"re=e-1 contains=@zeptoNormal
 syn region zeptoStruc matchgroup=Delimiter start="#("rs=s+2 matchgroup=Delimiter end=")"re=e-1 contains=@zeptoNormal
-syn region zeptoStruc matchgroup=Delimiter start="b("rs=s+1 matchgroup=Delimiter end=")"re=e-1 contains=@zeptoNormal
+syn region zeptoStruc matchgroup=Delimiter start="b("rs=s+2 matchgroup=Delimiter end=")"re=e-1 contains=@zeptoNormal
 syn region zeptoStruc matchgroup=Delimiter start="{"rs=s+1 matchgroup=Delimiter end="}"re=e-1 contains=@zeptoNormal
-syn region zeptoStruc matchgroup=Delimiter start="b{"rs=s+1 matchgroup=Delimiter end="}"re=e-1 contains=@zeptoNormal
-syn region zeptoStruc matchgroup=Delimiter start="#{"rs=s+1 matchgroup=Delimiter end="}"re=e-1 contains=@zeptoNormal
+syn region zeptoStruc matchgroup=Delimiter start="b{"rs=s+2 matchgroup=Delimiter end="}"re=e-1 contains=@zeptoNormal
+syn region zeptoStruc matchgroup=Delimiter start="#{"rs=s+2 matchgroup=Delimiter end="}"re=e-1 contains=@zeptoNormal
 syn region zeptoStruc matchgroup=Delimiter start="\["rs=s+1 matchgroup=Delimiter end="\]"re=e-1 contains=@zeptoNormal
 
 syn region zeptoString start=/\%(\\\)\@<!"/ skip=/\\[\\"]/ end=/"/
