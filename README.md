@@ -15,7 +15,7 @@ pathogen goes like this:
 
 ````bash
 cd ~/.vim/bundle
-git clone git://github.com/zeptolang/zepto-vim.git
+git clone git://github.com/zepto-lang/zepto-vim.git
 ```
 
 ### Manual
