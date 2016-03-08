@@ -23,7 +23,8 @@ syn keyword zeptoSyntax quote \| <- , typeof \|\| && <\| \|>
 syn keyword zeptoSyntax lambda let let* letrec letrec*
 syn keyword zeptoSyntax if cond and or nor case define else
 syn keyword zeptoSyntax define-syntax syntax-rules
-syn keyword zeptoSyntax when unless
+syn keyword zeptoSyntax when unless define-struct
+syn keyword zeptoSyntax defprotocol defimpl
 syn keyword zeptoSyntax set! set-car! set-cdr!
 syn keyword zeptoSyntax for for-each foreach begin
 syn keyword zeptoSyntax quasiquote unquote unquote-splicing
@@ -189,6 +190,7 @@ syn match zeptoError   "\<#\\\k*\>"
 syn match zeptoChar    "\<#\\.\w\@!"
 syn match zeptoChar    "\<#\\space\>"
 syn match zeptoChar    "\<#\\newline\>"
+syn match zeptoChar    "\<#\\carriage\>"
 syn match zeptoChar    "\<#\\return\>"
 syn match zeptoChar    "\<#\\null\?\>"
 syn match zeptoChar    "\<#\\backspace\>"
