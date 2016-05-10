@@ -19,12 +19,12 @@ else
 endif
 
 
-syn keyword zeptoSyntax quote \| <- , typeof \|\| && <\| \|>
-syn keyword zeptoSyntax lambda let let* letrec letrec*
+syn keyword zeptoSyntax quote \| <- , typeof \|\| && <\| \|> comment
+syn keyword zeptoSyntax lambda let let* letrec letrec* do
 syn keyword zeptoSyntax if cond and or nor case define else
 syn keyword zeptoSyntax define-syntax syntax-rules
 syn keyword zeptoSyntax when unless define-struct
-syn keyword zeptoSyntax defprotocol defimpl
+syn keyword zeptoSyntax defprotocol defimpl case-lambda
 syn keyword zeptoSyntax set! set-car! set-cdr!
 syn keyword zeptoSyntax for for-each foreach begin
 syn keyword zeptoSyntax quasiquote unquote unquote-splicing
@@ -68,17 +68,23 @@ syn keyword zeptoFunc string->rational string->complex string->boolean
 
 syn keyword zeptoFunc pi e
 
-syn keyword zeptoFunc string? make-string string string:length
+syn keyword zeptoFunc string? make-string string string:length string:split
 syn keyword zeptoFunc string:ref string:set! substring string:copy string:copy!
 syn keyword zeptoFunc string:fill! string:append string->list list->string
 syn keyword zeptoFunc string:extend ++ += string:lower-case string:upper-case
-syn keyword zeptoFunc string:substitute
+syn keyword zeptoFunc string:substitute string:find string:join string:last
+syn keyword zeptoFunc string:in? string:head string:tail string:count string:empty?
+syn keyword zeptoFunc string:upper? string:trim string:reduce string:filter
+syn keyword zeptoFunc string:lower? string:num? string:alpha? string:alphanum?
+syn keyword zeptoFunc string:map string:update! string:replicate string:starts-with
+syn keyword zeptoFunc string:ends-with
 
 syn keyword zeptoFunc make-hash hash:values hash:keys hash:filter-by-keys hash-map?
 syn keyword zeptoFunc hash-contains? hash:values-reduce hash:values-map hash:values-filter
 syn keyword zeptoFunc hash:keys-reduce hash:keys-map hash:keys-filter
 syn keyword zeptoFunc hash:kv-reduce hash:kv-map hash:kv-filter
-syn keyword zeptoFunc hash:set hash:set! hash:update hash:update!
+syn keyword zeptoFunc hash:set hash:set! hash:update hash:update! hash:merge
+syn keyword zeptoFunc hash:merge! hash:deep-merge
 
 syn keyword zeptoFunc char->integer
 
@@ -91,7 +97,7 @@ syn keyword zeptoFunc symbol->string string->symbol
 syn keyword zeptoFunc list->vector list->string vector->list string->list
 
 syn keyword zeptoFunc pair? null? cons car cdr null
-syn keyword zeptoFunc list? list list:length list:append list:extend list:index
+syn keyword zeptoFunc list? list list:length list:append list:extend list:index list:last
 syn keyword zeptoFunc list:ref list:tail append extend reverse map reduce length
 syn keyword zeptoFunc foldl foldr fold filter remove in? pop-left pop-right append-left
 syn keyword zeptoFunc sort member memv memq
@@ -107,12 +113,22 @@ syn keyword zeptoFunc vector->byte-vector byte-vector->vector
 syn keyword zeptoFunc vector?  make-vector vector vector:length
 syn keyword zeptoFunc vector:ref vector:set! vector:update vector:update!
 syn keyword zeptoFunc vector:fill! vector:append vector:extend
+syn keyword zeptoFunc vector:head vector:tail vector:map vector:filter
+syn keyword zeptoFunc vector:drop-while vector:mapcat vector:reduce
+syn keyword zeptoFunc vector:take-while vector:empty? vector:matches?
+syn keyword zeptoFunc vector:binary-search vector:index vector:after
+syn keyword zeptoFunc vector:count vector:min vector:max vector:last
+syn keyword zeptoFunc vector:in? vector:indexed-tail vector:drop
+syn keyword zeptoFunc vector:swap vector:shuffle
 
 syn keyword zeptoFunc byte-vector? byte-vector:ref byte-vector:length
 syn keyword zeptoFunc byte-vector byte-vector:extend byte-vector:append
 syn keyword zeptoFunc make-byte-vector byte-vector:head byte-vector:tail
 syn keyword zeptoFunc make-byte-vector byte-vector:update byte-vector:update!
-
+syn keyword zeptoFunc byte-vector:head byte-vector:tail byte-vector:map byte-vector:filter
+syn keyword zeptoFunc byte-vector:mapcat byte-vector:reduce byte-vector:empty?
+syn keyword zeptoFunc byte-vector:binary-search byte-vector:index
+syn keyword zeptoFunc byte-vector:last byte-vector:in? byte-vector:indexed-tail
 
 syn keyword zeptoFunc procedure? apply compose
 syn keyword zeptoFunc primitive?
