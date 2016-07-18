@@ -25,7 +25,7 @@ syn keyword zeptoSyntax if cond and or nor case define else
 syn keyword zeptoSyntax define-syntax syntax-rules
 syn keyword zeptoSyntax when unless define-struct defkeywords
 syn keyword zeptoSyntax defprotocol defimpl case-lambda
-syn keyword zeptoSyntax set! set-car! set-cdr!
+syn keyword zeptoSyntax set! set-car! set-cdr! load
 syn keyword zeptoSyntax for for-each foreach begin
 syn keyword zeptoSyntax quasiquote unquote unquote-splicing
 
