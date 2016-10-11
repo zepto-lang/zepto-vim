@@ -25,7 +25,7 @@ syn keyword zeptoSyntax if cond and or nor case define else
 syn keyword zeptoSyntax define-syntax syntax-rules
 syn keyword zeptoSyntax when unless define-struct defkeywords
 syn keyword zeptoSyntax defprotocol defimpl case-lambda
-syn keyword zeptoSyntax set! set-car! set-cdr!
+syn keyword zeptoSyntax set! set-car! set-cdr! load
 syn keyword zeptoSyntax for for-each foreach begin
 syn keyword zeptoSyntax quasiquote unquote unquote-splicing
 
@@ -98,7 +98,7 @@ syn keyword zeptoFunc list->vector list->string vector->list string->list
 
 syn keyword zeptoFunc pair? null? cons car cdr null
 syn keyword zeptoFunc list? list list:length list:append list:extend list:index list:last
-syn keyword zeptoFunc list:ref list:tail append extend reverse map reduce length
+syn keyword zeptoFunc list:ref list:tail list:but-last append extend reverse map reduce length
 syn keyword zeptoFunc foldl foldr fold filter remove in? pop-left pop-right append-left
 syn keyword zeptoFunc sort member memv memq
 syn keyword zeptoFunc assq assv assoc
