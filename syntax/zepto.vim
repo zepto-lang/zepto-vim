@@ -23,7 +23,7 @@ syn keyword zeptoSyntax quote \| <- , typeof \|\| && <\| \|> comment
 syn keyword zeptoSyntax lambda let let* letrec letrec* do
 syn keyword zeptoSyntax if cond and or nor case define else
 syn keyword zeptoSyntax define-syntax syntax-rules
-syn keyword zeptoSyntax when unless define-struct
+syn keyword zeptoSyntax when unless define-struct defkeywords
 syn keyword zeptoSyntax defprotocol defimpl case-lambda
 syn keyword zeptoSyntax set! set-car! set-cdr!
 syn keyword zeptoSyntax for for-each foreach begin
