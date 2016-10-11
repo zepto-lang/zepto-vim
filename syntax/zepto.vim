@@ -161,6 +161,7 @@ syn region zeptoStruc matchgroup=Delimiter start="\["rs=s+1 matchgroup=Delimiter
 
 syn region zeptoString start=/\%(\\\)\@<!"/ skip=/\\[\\"]/ end=/"/
 syn region zeptoString start=/#<<\z(.*\)$/ end=/^\z1$/
+syn region zeptoRegex start=/r\// skip=/\\\// end=/\//
 
 syn cluster zeptoNormal          add=zeptoError,zeptoConstant,zeptoStruc,zeptoString
 syn cluster zeptoQuotedOrNormal  add=zeptoString
@@ -266,6 +267,7 @@ if version >= 508 || !exists("zepto_syntax_init")
   HiLink zeptoFunc               Function
 
   HiLink zeptoString             String
+  HiLink zeptoRegex              String
   HiLink zeptoChar               Character
   HiLink zeptoBoolean            Boolean
 
