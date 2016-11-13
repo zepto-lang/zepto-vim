@@ -40,7 +40,7 @@ syn keyword zeptoFunc write display error write?
 syn keyword zeptoFunc read read-all read-contents read?
 
 syn keyword zeptoFunc boolean? not equal? eqv? eq? nil inf
-syn keyword zeptoFunc symbol? boolean?
+syn keyword zeptoFunc symbol? boolean? nil?
 syn keyword zeptoFunc number? complex? real? rational? integer?
 syn keyword zeptoFunc zero? positive? negative? float?
 syn keyword zeptoFunc even? odd? exact? inexact?
