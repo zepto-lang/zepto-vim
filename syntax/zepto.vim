@@ -136,6 +136,7 @@ syn keyword zeptoFunc negate curry uncurry
 
 syn match zeptoAtom      ,:\k+,  contained
 syn match zeptoSymbol    ,\k+,  contained
+syn match zeptoTodo /\v<(FIXME|NOTE|TODO|OPTIMIZE)/ containedin=zeptoComment,zeptoString
 
 syn cluster zeptoNormal  contains=zeptoSyntax,zeptoFunc,zeptoDelimiter
 syn cluster zeptoQuotedStuff  contains=zeptoSymbol,zeptoAtom
@@ -216,7 +217,7 @@ syn match zeptoChar    "\<#\\[0-7]\{1,3}\>"
 syn match zeptoChar    "\<#\\x[0-9a-f]\{1,2}\>"
 syn match zeptoChar    "\<#\\u[0-9a-f]\{1,6}\>"
 
-syn cluster zeptoNormal  add=zeptoNumber,zeptoBoolean,zeptoChar
+syn cluster zeptoNormal  add=zeptoNumber,zeptoBoolean,zeptoChar,zeptoRegex
 syn cluster zeptoQuotedOrNormal  add=zeptoNumber,zeptoBoolean
 
 syn cluster zeptoNormal  add=zeptoExtFunc,zeptoExtSyntax
@@ -283,6 +284,7 @@ if version >= 508 || !exists("zepto_syntax_init")
   HiLink zeptoDelimiter          Delimiter
   HiLink zeptoConstant           Constant
 
+  HiLink zeptoTodo               Todo
   HiLink zeptoComment            Comment
   HiLink zeptoMultilineComment   Comment
   HiLink zeptoError              Error
